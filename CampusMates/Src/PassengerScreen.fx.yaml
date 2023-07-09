@@ -1,0 +1,260 @@
+PassengerScreen As screen:
+    OnVisible: |-
+        =ClearCollect(colTopPicks,
+            {
+                Picture: Patricia,
+                Name: "Patricia Schweikert",
+                MatchRate: 91,
+                Car: "Mercedes"
+            },
+            {
+                Picture: Laura,
+                Name: "Laura Demuth",
+                MatchRate: 87,
+                Car: "Volkswagen"
+            },
+            {
+                Picture: Jessica,
+                Name: "Jessica Schmid",
+                MatchRate: 75,
+                Car: "Audi"
+            },
+            {
+                Picture: Anna,
+                Name: "Anna Richter",
+                MatchRate: 73,
+                Car: "Mercedes"
+            },
+            {
+                Picture: Katja,
+                Name: "Katja Nawrath",
+                MatchRate: 67,
+                Car: "Opel"
+            },
+            {
+                Picture: Simon,
+                Name: "Simon Jarke",
+                MatchRate: 64,
+                Car: "BMW"
+            }
+        )
+
+    HeaderContainer_2 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =80
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =640
+        ZIndex: =1
+
+        headerLogo_3 As image:
+            Height: =65
+            Image: =FreudenbergLogo
+            Width: =305
+            Y: =5
+            ZIndex: =3
+
+        imgUser_2 As image:
+            Height: =40
+            Image: =userIcon
+            OnSelect: =Navigate(ProfileScreen, Transition.None)
+            Width: =40
+            X: =591
+            Y: =15
+            ZIndex: =4
+
+        imgHome_2 As image:
+            Height: =40
+            Image: =homeIcon
+            OnSelect: =Navigate(HomeScreen, Transition.None)
+            Width: =40
+            X: =533
+            Y: =15
+            ZIndex: =5
+
+        btnUser_2 As button:
+            Fill: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            OnSelect: =Select(imgUser_2)
+            Size: =24
+            Text: =""
+            Width: =40
+            X: =591
+            Y: =17
+            ZIndex: =6
+
+        btnHome_2 As button:
+            Fill: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            OnSelect: =Select(imgHome_2)
+            Size: =24
+            Text: =""
+            Width: =40
+            X: =533
+            Y: =17
+            ZIndex: =7
+
+    PassengerContainer As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =App.Height - HeaderContainer.Height
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =640
+        Y: =HeaderContainer.Height
+        ZIndex: =2
+
+        rctTopPicksTitle As rectangle:
+            Fill: |-
+                =ColorValue("#ECF5F6")
+            Height: =50
+            Width: =640
+            Y: =14
+            ZIndex: =1
+
+        lblTopPicksTitle As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            PaddingLeft: =40
+            Size: =20
+            Text: |-
+                ="Top Picks
+                "
+            Width: =400
+            Y: =14
+            ZIndex: =2
+
+        "galTopPicks As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            DelayItemLoading: =true
+            Height: =768
+            Items: =colTopPicks
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =125
+            Y: =64
+            ZIndex: =3
+
+            Image2 As image:
+                Height: =80
+                Image: =ThisItem.Picture
+                OnSelect: =Select(Parent)
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                Width: =80
+                X: =Theme.ScreenMargin
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            Title1 As label:
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =22
+                Text: =ThisItem.Name
+                VerticalAlign: =VerticalAlign.Top
+                Width: =350
+                X: =139
+                Y: =26
+                ZIndex: =2
+
+            Subtitle1 As label:
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =16
+                Text: ="Interests"
+                VerticalAlign: =VerticalAlign.Top
+                X: =Title1.X
+                Y: =78
+                ZIndex: =3
+
+            Subtitle1_1 As label:
+                Color: |-
+                    =If(ThisItem.MatchRate >= 90, ColorValue("#009933"), ThisItem.MatchRate >= 80, ColorValue("#ffcc00"), ThisItem.MatchRate >= 70, ColorValue("#ff6600"), ColorValue("#cc0000"))
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =16
+                Text: =ThisItem.MatchRate & "%"
+                VerticalAlign: =VerticalAlign.Top
+                X: =289
+                Y: =78
+                ZIndex: =7
+
+            rctPlanning1_1 As rectangle:
+                Fill: =Color
+                Height: =2
+                Width: =240
+                X: =139
+                Y: =70
+                ZIndex: =8
+
+            Subtitle1_2 As label:
+                Align: =Align.Right
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =16
+                Text: =ThisItem.Car
+                VerticalAlign: =VerticalAlign.Top
+                Visible: =varSelectedType = "Join a ride"
+                X: =439
+                Y: =80
+                ZIndex: =9
+
+            imgBoxes1_1 As image:
+                Height: =25
+                Image: ='plus-approval-button'
+                OnSelect: |-
+                    =Patch(PlannedEvents, Defaults(PlannedEvents), { Title: galTopPicks.Selected.Name, IsPending: true , Buddy: User().FullName, EventDate: lclSelectedDate + Time(First(Split(lclSelectedTime, ":")).Value,Last(Split(lclSelectedTime, ":")).Value, 0), EventType: {Value: varSelectedType}});
+                    Notify("Your request to " & ThisItem.Name & " has been sent. You will be notified once they accept or reject your request.",NotificationType.Information)
+                    
+                    //DateValue1.SelectedDate + Time(Value(HourValue1.Selected.Value), Value(MinuteValue1.Selected.Value), 0)
+                Width: =25
+                X: =564
+                Y: =33
+                ZIndex: =10
+
+            btnHome_4 As button:
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =25
+                HoverFill: =RGBA(0, 0, 0, 0)
+                OnSelect: =Select(imgBoxes1_1)
+                Size: =24
+                Text: =""
+                Width: =25
+                X: =564
+                Y: =33
+                ZIndex: =11
+
+        Image3 As image:
+            Height: =167
+            Image: =road
+            Width: =582
+            X: =29
+            Y: =860
+            ZIndex: =4
+

@@ -1,0 +1,441 @@
+DesignScreen As screen:
+
+    BtnOK As button:
+        BorderColor: =BtnOK.Fill
+        Fill: =Theme.PrimaryColor
+        FocusedBorderColor: =BtnOK.BorderColor
+        FontWeight: =FontWeight.Normal
+        HoverBorderColor: =ColorFade(BtnOK.BorderColor, 20%)
+        HoverFill: =ColorFade(BtnOK.Fill , -20%)
+        PressedBorderColor: =BtnOK.Fill
+        PressedColor: =BtnOK.Fill
+        PressedFill: =BtnOK.Color
+        RadiusBottomLeft: =5
+        RadiusBottomRight: =5
+        RadiusTopLeft: =5
+        RadiusTopRight: =5
+        Text: ="OK"
+        X: =96
+        Y: =286
+        ZIndex: =1
+
+    TextInputSearch As text:
+        BorderColor: =Theme.BorderColor
+        BorderThickness: =Theme.BorderThickness
+        Color: =Theme.PrimaryColor
+        Default: =""
+        FocusedBorderColor: =TextInputSearch.BorderColor
+        FocusedBorderThickness: =Theme.BorderThickness
+        HintText: =Theme.HintText
+        HoverBorderColor: =Theme.BorderColor
+        HoverColor: =Theme.PrimaryColor
+        HoverFill: =ColorFade(Theme.PrimaryColor,90%)
+        PaddingLeft: =10
+        PressedBorderColor: =TextInputSearch.HoverBorderColor
+        PressedColor: =TextInputSearch.Color
+        PressedFill: =TextInputSearch.Fill
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =Theme.FontSize
+        X: =300
+        Y: =573
+        ZIndex: =2
+
+    IcnEdit As icon.Edit:
+        Color: =Theme.PrimaryColor
+        DisabledFill: =IcnEdit.Fill
+        FocusedBorderColor: =IcnEdit.BorderColor
+        Height: =Theme.IconHeight
+        HoverBorderColor: =ColorFade(IcnEdit.BorderColor, 20%)
+        HoverColor: =ColorFade(IcnEdit.Color, 20%)
+        HoverFill: =IcnEdit.Fill
+        Icon: =Icon.Edit
+        PressedBorderColor: =ColorFade(IcnEdit.BorderColor, -20%)
+        PressedColor: =ColorFade(IcnEdit.Color, -20%)
+        PressedFill: =IcnEdit.Fill
+        Width: =Theme.IconHeight
+        X: =117
+        Y: =475
+        ZIndex: =5
+
+    grpAddNew As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =6
+
+        BtnAdd As button:
+            Align: =TextPosition.Right
+            BorderColor: =BtnAdd.Fill
+            Fill: =Theme.PrimaryColor
+            FocusedBorderColor: =BtnAdd.BorderColor
+            FontWeight: =FontWeight.Normal
+            Height: =50
+            HoverBorderColor: =ColorFade(BtnAdd.BorderColor, 20%)
+            HoverFill: =ColorFade( BtnAdd.Fill , -20%)
+            PaddingRight: =20
+            PressedBorderColor: =BtnAdd.Fill
+            PressedColor: =BtnAdd.Fill
+            PressedFill: =BtnAdd.Color
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: ="Add new"
+            X: =96
+            Y: =372
+            ZIndex: =3
+
+        IconAdd As icon.Add:
+            Color: =If(BtnAdd.Pressed,Theme.PrimaryColor, Color.White)
+            DisabledFill: =IconAdd.Fill
+            FocusedBorderColor: =IconAdd.BorderColor
+            Height: =BtnAdd.Height /3 *2
+            HoverBorderColor: =ColorFade(IconAdd.BorderColor, 20%)
+            HoverColor: =ColorFade(IconAdd.Color, 20%)
+            HoverFill: =IconAdd.Fill
+            Icon: =Icon.Add
+            PressedBorderColor: =ColorFade(IconAdd.BorderColor, -20%)
+            PressedColor: =ColorFade(IconAdd.Color, -20%)
+            PressedFill: =IconAdd.Fill
+            Width: =BtnAdd.Height /3 *2
+            X: =109
+            Y: =380
+            ZIndex: =4
+
+    BtnCancel As button:
+        BorderColor: =BtnCancel.Color
+        Color: =Theme.PrimaryColor
+        Fill: =Color.White
+        FocusedBorderColor: =BtnCancel.BorderColor
+        FontWeight: =FontWeight.Normal
+        HoverBorderColor: =ColorFade(BtnCancel.BorderColor, 20%)
+        HoverColor: =BtnCancel.Color
+        HoverFill: =ColorFade( BtnCancel.Fill , -20%)
+        PressedBorderColor: =BtnCancel.Fill
+        PressedColor: =BtnCancel.Fill
+        PressedFill: =BtnCancel.Color
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: ="CANCEL"
+        X: =287
+        Y: =286
+        ZIndex: =7
+
+    LblScreenTitle As label:
+        Color: =Theme.QuaternaryColor
+        FocusedBorderColor: =LblScreenTitle.BorderColor
+        FontWeight: =FontWeight.Bold
+        Height: =42
+        HoverBorderColor: =LblScreenTitle.BorderColor
+        HoverColor: =LblScreenTitle.Color
+        HoverFill: =LblScreenTitle.Fill
+        PressedBorderColor: =LblScreenTitle.BorderColor
+        PressedColor: =LblScreenTitle.Color
+        PressedFill: =LblScreenTitle.Fill
+        Size: =Theme.FontSizeHeader
+        Text: ="Screen Header"
+        Width: =299
+        X: =Theme.ScreenMargin
+        Y: =151
+        ZIndex: =8
+
+    LblSmallHeader As label:
+        Color: =Theme.QuaternaryColor
+        FocusedBorderColor: =LblSmallHeader.BorderColor
+        FontWeight: =FontWeight.Semibold
+        HoverBorderColor: =LblSmallHeader.BorderColor
+        HoverColor: =LblSmallHeader.Color
+        HoverFill: =LblSmallHeader.Fill
+        PressedBorderColor: =LblSmallHeader.BorderColor
+        PressedColor: =LblSmallHeader.Color
+        PressedFill: =LblSmallHeader.Fill
+        Size: =Theme.FontSize
+        Text: ="Text"
+        X: =Theme.ScreenMargin
+        Y: =193
+        ZIndex: =9
+
+    LblNormalText As label:
+        Color: =Theme.QuaternaryColor
+        FocusedBorderColor: =LblNormalText.BorderColor
+        HoverBorderColor: =LblNormalText.BorderColor
+        HoverColor: =LblNormalText.Color
+        HoverFill: =LblNormalText.Fill
+        PressedBorderColor: =LblNormalText.BorderColor
+        PressedColor: =LblNormalText.Color
+        PressedFill: =LblNormalText.Fill
+        Size: =Theme.FontSize
+        Text: ="Text"
+        X: =Theme.ScreenMargin
+        Y: =233
+        ZIndex: =10
+
+    Dropdown As dropdown:
+        BorderColor: =Theme.BorderColor
+        BorderThickness: =Theme.BorderThickness
+        ChevronBackground: =Color.White
+        ChevronFill: =Color.Gray
+        ChevronHoverBackground: =Color.White
+        ChevronHoverFill: =Color.Gray
+        Color: =Theme.QuaternaryColor
+        FocusedBorderColor: =Theme.BorderColor
+        FocusedBorderThickness: =Theme.BorderThickness + 1
+        HoverBorderColor: =ColorFade(Dropdown.BorderColor, 15%)
+        HoverFill: =ColorFade( Theme.PrimaryColor, 80%)
+        Items: =DropDownSample
+        PressedBorderColor: =Dropdown.HoverBorderColor
+        PressedFill: =Theme.PrimaryColor
+        SelectionFill: =Theme.PrimaryColor
+        Size: =Theme.FontSize
+        Width: =320
+        X: =300
+        Y: =382
+        ZIndex: =11
+
+    ComboBox As combobox:
+        BorderColor: =Theme.BorderColor
+        BorderThickness: =Theme.BorderThickness
+        ChevronBackground: =Color.White
+        ChevronFill: =Color.Gray
+        ChevronHoverBackground: =Color.White
+        ChevronHoverFill: =Color.Gray
+        Color: =Theme.QuaternaryColor
+        FocusedBorderColor: =Theme.BorderColor
+        FocusedBorderThickness: =Theme.BorderThickness + 1
+        HoverBorderColor: =ColorFade(ComboBox.BorderColor, 15%)
+        HoverFill: =ColorFade( Theme.PrimaryColor, 80%)
+        Items: =ComboBoxSample
+        MoreItemsButtonColor: =ComboBox.ChevronBackground
+        PaddingLeft: =10
+        PressedBorderColor: =ComboBox.HoverBorderColor
+        PressedFill: =Theme.PrimaryColor
+        SearchItems: =Search(ComboBoxSample,ComboBox.SearchText,"Value1")
+        SelectionFill: =Theme.PrimaryColor
+        SelectionTagColor: =ComboBox.HoverColor
+        SelectionTagFill: =ComboBox.HoverFill
+        SelectMultiple: =false
+        Size: =Theme.FontSize
+        Width: =320
+        X: =300
+        Y: =448
+        ZIndex: =12
+
+    TextInput As text:
+        BorderColor: =Theme.BorderColor
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =Theme.BorderThickness
+        Color: =Theme.QuaternaryColor
+        Default: =""
+        Fill: =Theme.SecondaryColor
+        FocusedBorderColor: =Theme.BorderColor
+        FocusedBorderThickness: =Theme.BorderThickness + 1
+        HoverBorderColor: =Theme.BorderColor
+        HoverColor: =Theme.QuaternaryColor
+        HoverFill: =ColorFade( Theme.PrimaryColor, 80%)
+        PaddingLeft: =10
+        PressedBorderColor: =TextInput.HoverBorderColor
+        PressedColor: =TextInput.Color
+        PressedFill: =TextInput.Fill
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =Theme.FontSize
+        X: =300
+        Y: =505
+        ZIndex: =13
+
+    BtnDelete As button:
+        BorderColor: =BtnDelete.Fill
+        Fill: =Color.DarkRed
+        FocusedBorderColor: =BtnDelete.BorderColor
+        FontWeight: =FontWeight.Normal
+        HoverBorderColor: =ColorFade(BtnDelete.BorderColor, 20%)
+        HoverFill: =ColorFade(BtnDelete.Fill , -20%)
+        PressedBorderColor: =BtnDelete.Fill
+        PressedColor: =BtnDelete.Fill
+        PressedFill: =BtnDelete.Color
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: ="DELETE"
+        X: =472
+        Y: =282
+        ZIndex: =14
+
+    IcnDelete As icon.Edit:
+        Color: =Color.DarkRed
+        DisabledFill: =IcnDelete.Fill
+        FocusedBorderColor: =IcnDelete.BorderColor
+        Height: =Theme.IconHeight
+        HoverBorderColor: =ColorFade(IcnDelete.BorderColor, 20%)
+        HoverColor: =ColorFade(IcnDelete.Color, 20%)
+        HoverFill: =IcnDelete.Fill
+        Icon: =Icon.Trash
+        PressedBorderColor: =ColorFade(IcnDelete.BorderColor, -20%)
+        PressedColor: =ColorFade(IcnDelete.Color, -20%)
+        PressedFill: =IcnDelete.Fill
+        Width: =Theme.IconHeight
+        X: =117
+        Y: =554
+        ZIndex: =15
+
+    IcnSearch As icon.Edit:
+        Color: =Theme.PrimaryColor
+        DisabledFill: =IcnSearch.Fill
+        FocusedBorderColor: =IcnSearch.BorderColor
+        Height: =Theme.IconHeight
+        HoverBorderColor: =ColorFade(IcnSearch.BorderColor, 20%)
+        HoverColor: =ColorFade(IcnSearch.Color, 20%)
+        HoverFill: =IcnSearch.Fill
+        Icon: =Icon.Search
+        PressedBorderColor: =ColorFade(IcnSearch.BorderColor, -20%)
+        PressedColor: =ColorFade(IcnSearch.Color, -20%)
+        PressedFill: =IcnSearch.Fill
+        Width: =Theme.IconHeight
+        X: =117
+        Y: =620
+        ZIndex: =16
+
+    Radio2 As radio:
+        BorderColor: =Theme.BorderColor
+        FocusedBorderColor: =Radio2.BorderColor
+        FocusedBorderThickness: =0
+        HoverColor: =Theme.SecondaryColor
+        HoverFill: =Radio2.Fill
+        Items: =RadioSample
+        PressedColor: =Radio2.Color
+        PressedFill: =Radio2.Fill
+        RadioBorderColor: =Theme.SecondaryColor
+        RadioSelectionFill: =Theme.SecondaryColor
+        RadioSize: =Theme.RadioHeight
+        Size: =Theme.FontSize
+        X: =447
+        Y: =760
+        ZIndex: =17
+
+    icnSettings As icon.Edit:
+        Color: =Theme.SecondaryColor
+        DisabledFill: =icnSettings.Fill
+        FocusedBorderColor: =icnSettings.BorderColor
+        Height: =Theme.IconHeight
+        HoverBorderColor: =ColorFade(icnSettings.BorderColor, 20%)
+        HoverColor: =ColorFade(icnSettings.Color, 20%)
+        HoverFill: =icnSettings.Fill
+        Icon: =Icon.Settings
+        PressedBorderColor: =ColorFade(icnSettings.BorderColor, -20%)
+        PressedColor: =ColorFade(icnSettings.Color, -20%)
+        PressedFill: =icnSettings.Fill
+        Width: =Theme.IconHeight
+        X: =117
+        Y: =696
+        ZIndex: =18
+
+    DatePicker1 As datepicker:
+        BorderColor: =Theme.SecondaryColor
+        BorderThickness: =Theme.BorderThickness
+        FocusedBorderColor: =DatePicker1.BorderColor
+        FocusedBorderThickness: =Theme.BorderThickness + 1
+        HoverBorderColor: =DatePicker1.BorderColor
+        HoverFill: =DatePicker1.Fill
+        IconBackground: =Theme.PrimaryColor
+        InputTextPlaceholder: =Text(Date(2001,12,31), DatePicker1.Format, DatePicker1.Language)
+        PaddingTop: =5
+        PressedBorderColor: =DatePicker1.BorderColor
+        PressedFill: =DatePicker1.Fill
+        Size: =Theme.FontSize
+        Width: =320
+        X: =300
+        Y: =634
+        ZIndex: =20
+
+    IcnEditSmall As icon.Edit:
+        Color: =Theme.PrimaryColor
+        DisabledFill: =IcnEditSmall.Fill
+        FocusedBorderColor: =IcnEditSmall.BorderColor
+        Height: =Theme.IconHeightSmall
+        HoverBorderColor: =ColorFade(IcnEditSmall.BorderColor, 20%)
+        HoverColor: =ColorFade(IcnEditSmall.Color, 20%)
+        HoverFill: =IcnEditSmall.Fill
+        Icon: =Icon.Edit
+        PressedBorderColor: =ColorFade(IcnEditSmall.BorderColor, -20%)
+        PressedColor: =ColorFade(IcnEditSmall.Color, -20%)
+        PressedFill: =IcnEditSmall.Fill
+        Width: =Theme.IconHeightSmall
+        X: =313
+        Y: =726
+        ZIndex: =21
+
+    IcnDeleteSmall As icon.Edit:
+        Color: =Color.DarkRed
+        DisabledFill: =IcnDeleteSmall.Fill
+        FocusedBorderColor: =IcnDeleteSmall.BorderColor
+        Height: =Theme.IconHeightSmall
+        HoverBorderColor: =ColorFade(IcnDeleteSmall.BorderColor, 20%)
+        HoverColor: =ColorFade(IcnDeleteSmall.Color, 20%)
+        HoverFill: =IcnDeleteSmall.Fill
+        Icon: =Icon.Trash
+        PressedBorderColor: =ColorFade(IcnDeleteSmall.BorderColor, -20%)
+        PressedColor: =ColorFade(IcnDeleteSmall.Color, -20%)
+        PressedFill: =IcnDeleteSmall.Fill
+        Width: =Theme.IconHeightSmall
+        X: =313
+        Y: =825
+        ZIndex: =22
+
+    IcnAttachmentSmall As icon.Edit:
+        Color: =Theme.PrimaryColor
+        DisabledFill: =IcnAttachmentSmall.Fill
+        FocusedBorderColor: =IcnAttachmentSmall.BorderColor
+        Height: =Theme.IconHeightSmall
+        HoverBorderColor: =ColorFade(IcnAttachmentSmall.BorderColor, 20%)
+        HoverColor: =ColorFade(IcnAttachmentSmall.Color, 20%)
+        HoverFill: =IcnAttachmentSmall.Fill
+        Icon: =Icon.PaperClip
+        PressedBorderColor: =ColorFade(IcnAttachmentSmall.BorderColor, -20%)
+        PressedColor: =ColorFade(IcnAttachmentSmall.Color, -20%)
+        PressedFill: =IcnAttachmentSmall.Fill
+        Width: =Theme.IconHeightSmall
+        X: =313
+        Y: =770
+        ZIndex: =23
+
+    ComboBox1 As combobox:
+        Height: =70
+        Items: =ComboBoxSample
+        SearchItems: =Search(ComboBoxSample,ComboBox1.SearchText,"Value1")
+        Size: =21
+        Width: =575
+        X: =60
+        Y: =60
+        ZIndex: =24
+
+    Checkbox1 As checkbox:
+        Height: =85
+        Size: =21
+        Text: ="Option"
+        Width: =280
+        X: =49
+        Y: =908
+        ZIndex: =25
+
+    Toggle1 As toggleSwitch:
+        BorderStyle: =BorderStyle.None
+        FalseFill: |-
+            =ColorValue("#D9D9D9")
+        FalseText: =""
+        Height: =40
+        Size: =21
+        TrueText: =""
+        Width: =80
+        X: =48
+        Y: =832
+        ZIndex: =26
+
