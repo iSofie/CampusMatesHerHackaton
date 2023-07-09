@@ -1,0 +1,958 @@
+"ProfileScreen As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+
+    ScrollableProfilePane As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =783
+        Width: =Parent.Width
+        Y: =352
+        ZIndex: =1
+
+        ProfileHeaderDataCard As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =101
+            Width: =Parent.Width
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            Rectangle1_2 As rectangle:
+                Fill: |-
+                    =ColorValue("#ECF5F6")
+                Height: =55
+                Width: =640
+                ZIndex: =1
+
+            imgProfilePicture As image:
+                Height: =140
+                Image: =User().Image
+                Width: =140
+                X: =App.Width - imgProfilePicture.Width - Theme.ScreenMargin
+                ZIndex: =2
+
+            lblProfileTitle As label:
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Bold
+                Height: =60
+                PaddingTop: =0
+                Size: =30
+                Text: ="My Profile"
+                Width: =400
+                X: =Theme.ScreenMargin
+                ZIndex: =3
+
+            lblPersonalInfoTitle As label:
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =50
+                Size: =20
+                Text: ="Personal Information"
+                Width: =400
+                X: =Theme.ScreenMargin
+                Y: =77
+                ZIndex: =4
+
+        PersonalInformationDataCard As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =454
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =2
+
+            txtInpFirstName As text:
+                BorderColor: =Theme.BorderColor
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =Theme.BorderThickness
+                Color: =Theme.QuaternaryColor
+                Default: =varO365Profile.givenName
+                DisplayMode: =DisplayMode.Disabled
+                Fill: =Theme.SecondaryColor
+                FocusedBorderColor: =Theme.BorderColor
+                FocusedBorderThickness: =Theme.BorderThickness + 1
+                Height: =60
+                HintText: ="First name"
+                HoverBorderColor: =Theme.BorderColor
+                HoverColor: =Theme.QuaternaryColor
+                HoverFill: =ColorFade( Theme.PrimaryColor, 80%)
+                PaddingLeft: =10
+                PressedBorderColor: =txtInpFirstName.HoverBorderColor
+                PressedColor: =txtInpFirstName.Color
+                PressedFill: =txtInpFirstName.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =Theme.FontSize
+                Width: =(App.Width - (Theme.ScreenMargin * 2) ) / 2 - 10
+                X: =Theme.ScreenMargin
+                Y: =27
+                ZIndex: =1
+
+            txtInpLastName As text:
+                BorderColor: =Theme.BorderColor
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =Theme.BorderThickness
+                Color: =Theme.QuaternaryColor
+                Default: =varO365Profile.surname
+                DisplayMode: =DisplayMode.Disabled
+                Fill: =Theme.SecondaryColor
+                FocusedBorderColor: =Theme.BorderColor
+                FocusedBorderThickness: =Theme.BorderThickness + 1
+                Height: =60
+                HintText: ="Last name"
+                HoverBorderColor: =Theme.BorderColor
+                HoverColor: =Theme.QuaternaryColor
+                HoverFill: =ColorFade( Theme.PrimaryColor, 80%)
+                PaddingLeft: =10
+                PressedBorderColor: =txtInpLastName.HoverBorderColor
+                PressedColor: =txtInpLastName.Color
+                PressedFill: =txtInpLastName.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =Theme.FontSize
+                Width: =(App.Width - (Theme.ScreenMargin * 2) ) / 2 - 10
+                X: |
+                    =20 + txtInpFirstName.X + txtInpFirstName.Width
+                Y: =27
+                ZIndex: =2
+
+            txtinpDepartment As text:
+                BorderColor: =Theme.BorderColor
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =Theme.BorderThickness
+                Color: =Theme.QuaternaryColor
+                Default: =varO365Profile.department
+                DisplayMode: =DisplayMode.Disabled
+                Fill: =Theme.SecondaryColor
+                FocusedBorderColor: =Theme.BorderColor
+                FocusedBorderThickness: =Theme.BorderThickness + 1
+                Height: =60
+                HintText: ="Department"
+                HoverBorderColor: =Theme.BorderColor
+                HoverColor: =Theme.QuaternaryColor
+                HoverFill: =ColorFade( Theme.PrimaryColor, 80%)
+                PaddingLeft: =10
+                PressedBorderColor: =txtinpDepartment.HoverBorderColor
+                PressedColor: =txtinpDepartment.Color
+                PressedFill: =txtinpDepartment.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =Theme.FontSize
+                Width: =(App.Width - (Theme.ScreenMargin * 2) ) / 2 - 10
+                X: =Theme.ScreenMargin
+                Y: =100
+                ZIndex: =3
+
+            txtinpJobTitle As text:
+                BorderColor: =Theme.BorderColor
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =Theme.BorderThickness
+                Color: =Theme.QuaternaryColor
+                Default: =varO365Profile.jobTitle
+                DisplayMode: =DisplayMode.Disabled
+                Fill: =Theme.SecondaryColor
+                FocusedBorderColor: =Theme.BorderColor
+                FocusedBorderThickness: =Theme.BorderThickness + 1
+                Height: =60
+                HintText: ="Role"
+                HoverBorderColor: =Theme.BorderColor
+                HoverColor: =Theme.QuaternaryColor
+                HoverFill: =ColorFade( Theme.PrimaryColor, 80%)
+                PaddingLeft: =10
+                PressedBorderColor: =txtinpJobTitle.HoverBorderColor
+                PressedColor: =txtinpJobTitle.Color
+                PressedFill: =txtinpJobTitle.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =Theme.FontSize
+                Width: =(App.Width - (Theme.ScreenMargin * 2) ) / 2 - 10
+                X: |
+                    =20 + txtInpFirstName.X + txtInpFirstName.Width
+                Y: =100
+                ZIndex: =4
+
+            txtInpAddress As text:
+                BorderColor: =Theme.BorderColor
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =Theme.BorderThickness
+                Color: =Theme.QuaternaryColor
+                Default: =varO365Profile.streetAddress
+                DisplayMode: =DisplayMode.Disabled
+                Fill: =Theme.SecondaryColor
+                FocusedBorderColor: =Theme.BorderColor
+                FocusedBorderThickness: =Theme.BorderThickness + 1
+                Height: =100
+                HintText: ="Home Address"
+                HoverBorderColor: =Theme.BorderColor
+                HoverColor: =Theme.QuaternaryColor
+                HoverFill: =ColorFade( Theme.PrimaryColor, 80%)
+                Mode: =TextMode.MultiLine
+                PaddingLeft: =10
+                PressedBorderColor: =txtInpAddress.HoverBorderColor
+                PressedColor: =txtInpAddress.Color
+                PressedFill: =txtInpAddress.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =Theme.FontSize
+                Width: =(App.Width - (Theme.ScreenMargin * 2) ) 
+                X: =Theme.ScreenMargin
+                Y: =178
+                ZIndex: =5
+
+            txtInpEmail As text:
+                BorderColor: =Theme.BorderColor
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =Theme.BorderThickness
+                Color: =Theme.QuaternaryColor
+                Default: =varO365Profile.mail
+                DisplayMode: =DisplayMode.Disabled
+                Fill: =Theme.SecondaryColor
+                FocusedBorderColor: =Theme.BorderColor
+                FocusedBorderThickness: =Theme.BorderThickness + 1
+                Height: =60
+                HintText: ="Email"
+                HoverBorderColor: =Theme.BorderColor
+                HoverColor: =Theme.QuaternaryColor
+                HoverFill: =ColorFade( Theme.PrimaryColor, 80%)
+                PaddingLeft: =10
+                PressedBorderColor: =txtInpEmail.HoverBorderColor
+                PressedColor: =txtInpEmail.Color
+                PressedFill: =txtInpEmail.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =Theme.FontSize
+                Width: =(App.Width - (Theme.ScreenMargin * 2) ) 
+                X: =40
+                Y: =298
+                ZIndex: =6
+
+            txtinpLanguage As text:
+                BorderColor: =Theme.BorderColor
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =Theme.BorderThickness
+                Color: =Theme.QuaternaryColor
+                Default: =Switch(varO365Profile.preferredLanguage, "en-US", "English", "nl-BE", "Dutch", "English")
+                DisplayMode: =DisplayMode.Disabled
+                Fill: =Theme.SecondaryColor
+                FocusedBorderColor: =Theme.BorderColor
+                FocusedBorderThickness: =Theme.BorderThickness + 1
+                Height: =60
+                HintText: ="First name"
+                HoverBorderColor: =Theme.BorderColor
+                HoverColor: =Theme.QuaternaryColor
+                HoverFill: =ColorFade( Theme.PrimaryColor, 80%)
+                PaddingLeft: =10
+                PressedBorderColor: =txtinpLanguage.HoverBorderColor
+                PressedColor: =txtinpLanguage.Color
+                PressedFill: =txtinpLanguage.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =Theme.FontSize
+                Width: =(App.Width - (Theme.ScreenMargin * 2) ) / 2 - 10
+                X: =Theme.ScreenMargin
+                Y: =378
+                ZIndex: =7
+
+            txtinpPhoneNumber As text:
+                BorderColor: =Theme.BorderColor
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =Theme.BorderThickness
+                Color: =Theme.QuaternaryColor
+                Default: =varO365Profile.mobilePhone
+                DisplayMode: =DisplayMode.Disabled
+                Fill: =Theme.SecondaryColor
+                FocusedBorderColor: =Theme.BorderColor
+                FocusedBorderThickness: =Theme.BorderThickness + 1
+                Height: =60
+                HintText: ="Last name"
+                HoverBorderColor: =Theme.BorderColor
+                HoverColor: =Theme.QuaternaryColor
+                HoverFill: =ColorFade( Theme.PrimaryColor, 80%)
+                PaddingLeft: =10
+                PressedBorderColor: =txtinpPhoneNumber.HoverBorderColor
+                PressedColor: =txtinpPhoneNumber.Color
+                PressedFill: =txtinpPhoneNumber.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =Theme.FontSize
+                Width: =(App.Width - (Theme.ScreenMargin * 2) ) / 2 - 10
+                X: |
+                    =20 + txtInpFirstName.X + txtInpFirstName.Width
+                Y: =378
+                ZIndex: =8
+
+        PreferencesDataCard As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =313
+            Width: =640
+            X: =0
+            Y: =3
+            ZIndex: =3
+
+            lblPreferencesTitle As label:
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =50
+                Size: =20
+                Text: |-
+                    ="My Preferences
+                    "
+                Width: =400
+                X: =Theme.ScreenMargin
+                ZIndex: =1
+
+            lblGym As label:
+                Font: =Font.'Segoe UI'
+                Height: =50
+                Size: =20
+                Text: |-
+                    ="Gym Subscription
+                    "
+                Width: =350
+                X: =Theme.ScreenMargin + 20
+                Y: =50
+                ZIndex: =2
+
+            tglGym As toggleSwitch:
+                BorderStyle: =BorderStyle.None
+                Default: =varProfile.GymSubscription
+                FalseFill: |-
+                    =ColorValue("#D9D9D9")
+                FalseText: =""
+                Height: =35
+                Size: =21
+                TrueFill: |-
+                    =ColorValue("#205688")
+                TrueText: =""
+                Width: =80
+                X: =534
+                Y: =65
+                ZIndex: =3
+
+            lblCoffee As label:
+                Font: =Font.'Segoe UI'
+                Height: =50
+                Size: =20
+                Text: |-
+                    ="Coffee addict
+                    "
+                Width: =350
+                X: =Theme.ScreenMargin + 20
+                Y: =100
+                ZIndex: =4
+
+            lblGym_2 As label:
+                Font: =Font.'Segoe UI'
+                Height: =50
+                Size: =20
+                Text: |-
+                    ="Driver
+                    "
+                Width: =350
+                X: =Theme.ScreenMargin + 20
+                Y: =150
+                ZIndex: =5
+
+            lblGym_3 As label:
+                Font: =Font.'Segoe UI'
+                Height: =50
+                Size: =20
+                Text: ="Passenger"
+                Width: =350
+                X: =Theme.ScreenMargin + 20
+                Y: =200
+                ZIndex: =6
+
+            lblGym_4 As label:
+                Font: =Font.'Segoe UI'
+                Height: =50
+                Size: =20
+                Text: |-
+                    ="Bike user
+                    "
+                Width: =350
+                X: =Theme.ScreenMargin + 20
+                Y: =250
+                ZIndex: =7
+
+            tglCoffee As toggleSwitch:
+                BorderStyle: =BorderStyle.None
+                Default: =varProfile.Coffee
+                FalseFill: |-
+                    =ColorValue("#D9D9D9")
+                FalseText: =""
+                Height: =35
+                Size: =21
+                TrueFill: |-
+                    =ColorValue("#205688")
+                TrueText: =""
+                Width: =80
+                X: =534
+                Y: =115
+                ZIndex: =8
+
+            tglDriver As toggleSwitch:
+                BorderStyle: =BorderStyle.None
+                Default: =varProfile.Driver
+                FalseFill: |-
+                    =ColorValue("#D9D9D9")
+                FalseText: =""
+                Height: =35
+                Size: =21
+                TrueFill: |-
+                    =ColorValue("#205688")
+                TrueText: =""
+                Width: =80
+                X: =534
+                Y: =165
+                ZIndex: =9
+
+            tglPassenger As toggleSwitch:
+                BorderStyle: =BorderStyle.None
+                Default: =varProfile.Passenger
+                FalseFill: |-
+                    =ColorValue("#D9D9D9")
+                FalseText: =""
+                Height: =35
+                Size: =21
+                TrueFill: |-
+                    =ColorValue("#205688")
+                TrueText: =""
+                Width: =80
+                X: =534
+                Y: =215
+                ZIndex: =10
+
+            tglBike As toggleSwitch:
+                BorderStyle: =BorderStyle.None
+                Default: =varProfile.BikeUser
+                FalseFill: |-
+                    =ColorValue("#D9D9D9")
+                FalseText: =""
+                Height: =35
+                Size: =21
+                TrueFill: |-
+                    =ColorValue("#205688")
+                TrueText: =""
+                Width: =80
+                X: =534
+                Y: =265
+                ZIndex: =11
+
+        InerestsDataCard As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =129
+            Width: =640
+            X: =0
+            Y: =4
+            ZIndex: =4
+
+            lblInterestsTitle As label:
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =50
+                Size: =20
+                Text: |-
+                    ="Interests
+                    "
+                Width: =400
+                X: =Theme.ScreenMargin
+                ZIndex: =1
+
+            cmbInterests As combobox:
+                BorderColor: =Theme.BorderColor
+                BorderThickness: =Theme.BorderThickness
+                ChevronBackground: =Color.White
+                ChevronFill: =Color.Gray
+                ChevronHoverBackground: =Color.White
+                ChevronHoverFill: =Color.Gray
+                Color: =Theme.QuaternaryColor
+                DefaultSelectedItems: =varProfile.Interests
+                DisplayFields: =["Label"]
+                FocusedBorderColor: =Theme.BorderColor
+                FocusedBorderThickness: =Theme.BorderThickness + 1
+                Font: =Font.'Segoe UI'
+                Height: =50
+                HoverBorderColor: =ColorFade(cmbInterests.BorderColor, 15%)
+                HoverFill: =ColorFade( Theme.PrimaryColor, 80%)
+                InputTextPlaceholder: ="Share your interests & hobbies here..."
+                Items: =Choices([@Profile].Interests)
+                MoreItemsButtonColor: =cmbInterests.ChevronBackground
+                PaddingLeft: =10
+                PressedBorderColor: =cmbInterests.HoverBorderColor
+                PressedFill: =Theme.PrimaryColor
+                SearchFields: =["Label"]
+                SearchItems: =Choices(Profile.Interests,cmbInterests.SearchText)
+                SelectionFill: =Theme.PrimaryColor
+                SelectionTagColor: =cmbInterests.HoverColor
+                SelectionTagFill: =cmbInterests.HoverFill
+                Size: =16
+                Width: =(App.Width - (Theme.ScreenMargin * 2) ) 
+                X: =Theme.ScreenMargin
+                Y: =56
+                ZIndex: =2
+
+        CarDataCard As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =116
+            Width: =640
+            X: =0
+            Y: =5
+            ZIndex: =5
+
+            lblCar As label:
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =50
+                Size: =20
+                Text: |-
+                    ="My car
+                    "
+                Width: =400
+                X: =Theme.ScreenMargin
+                ZIndex: =1
+
+            cmbCar As combobox:
+                BorderColor: =Theme.BorderColor
+                BorderThickness: =Theme.BorderThickness
+                ChevronBackground: =Color.White
+                ChevronFill: =Color.Gray
+                ChevronHoverBackground: =Color.White
+                ChevronHoverFill: =Color.Gray
+                Color: =Theme.QuaternaryColor
+                DefaultSelectedItems: =varProfile.Car
+                DisplayFields: =["Label"]
+                FocusedBorderColor: =Theme.BorderColor
+                FocusedBorderThickness: =Theme.BorderThickness + 1
+                Font: =Font.'Segoe UI'
+                Height: =50
+                HoverBorderColor: =ColorFade(cmbCar.BorderColor, 15%)
+                HoverFill: =ColorFade( Theme.PrimaryColor, 80%)
+                InputTextPlaceholder: ="Car model"
+                IsSearchable: =false
+                Items: =Choices([@Profile].Car)
+                MoreItemsButtonColor: =cmbCar.ChevronBackground
+                NoSelectionText: ="Car model"
+                PaddingLeft: =10
+                PressedBorderColor: =cmbCar.HoverBorderColor
+                PressedFill: =Theme.PrimaryColor
+                SearchFields: =["Label"]
+                SearchItems: =[]
+                SelectionFill: =Theme.PrimaryColor
+                SelectionTagColor: =cmbCar.HoverColor
+                SelectionTagFill: =cmbCar.HoverFill
+                SelectMultiple: =false
+                Size: =16
+                Width: =(App.Width - (Theme.ScreenMargin * 2) ) * 4/6
+                X: =Theme.ScreenMargin
+                Y: =50
+                ZIndex: =2
+
+            txtinpCO2 As text:
+                BorderColor: =Theme.BorderColor
+                BorderThickness: =Theme.BorderThickness
+                Color: =Theme.PrimaryColor
+                Default: =varProfile.CarCO2
+                FocusedBorderColor: =txtinpCO2.BorderColor
+                FocusedBorderThickness: =Theme.BorderThickness
+                Font: =Font.'Segoe UI'
+                Height: =50
+                HintText: ="CO2 cspt"
+                HoverBorderColor: =Theme.BorderColor
+                HoverColor: =Theme.PrimaryColor
+                HoverFill: =ColorFade(Theme.PrimaryColor,90%)
+                PaddingLeft: =10
+                PressedBorderColor: =txtinpCO2.HoverBorderColor
+                PressedColor: =txtinpCO2.Color
+                PressedFill: =txtinpCO2.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =Theme.FontSize
+                Width: =158
+                X: =440
+                Y: =50
+                ZIndex: =3
+
+        ButtonsDataCard As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =87
+            Width: =640
+            X: =0
+            Y: =6
+            ZIndex: =6
+
+            BtnOK_1 As button:
+                BorderColor: =BtnOK_1.Fill
+                Fill: =Theme.PrimaryColor
+                FocusedBorderColor: =BtnOK_1.BorderColor
+                FontWeight: =FontWeight.Normal
+                Height: =50
+                HoverBorderColor: =ColorFade(BtnOK_1.BorderColor, 20%)
+                HoverFill: =ColorFade(BtnOK_1.Fill , -20%)
+                OnSelect: |
+                    =Patch(Profile, If(IsBlank(varProfile), Defaults(Profile), varProfile), 
+                    { 
+                        Title: User().Email, 
+                        CarCO2: txtinpCO2.Text,
+                        Car: cmbCar.Selected,
+                        GymSubscription:tglGym.Value,
+                        Coffee: tglCoffee.Value,
+                        Driver: tglDriver.Value,
+                        Passenger: tglPassenger.Value,
+                        BikeUser: tglBike.Value,
+                        Interests: cmbInterests.SelectedItems 
+                    }); 
+                    Notify("The changes have been saved succesfully", NotificationType.Success);
+                    Refresh(Profile); Set(varProfile, LookUp(Profile, Title = User().Email));
+                PressedBorderColor: =BtnOK_1.Fill
+                PressedColor: =BtnOK_1.Fill
+                PressedFill: =BtnOK_1.Color
+                RadiusBottomLeft: =5
+                RadiusBottomRight: =5
+                RadiusTopLeft: =5
+                RadiusTopRight: =5
+                Size: =18
+                Text: ="SAVE"
+                X: =440
+                Y: =12
+                ZIndex: =1
+
+    HeaderContainer_1 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =80
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =640
+        ZIndex: =2
+
+        headerLogo_2 As image:
+            Height: =65
+            Image: =FreudenbergLogo
+            Width: =305
+            Y: =5
+            ZIndex: =3
+
+        imgUser_1 As image:
+            Height: =40
+            Image: =userIcon
+            OnSelect: =Navigate(ProfileScreen, Transition.None)
+            Width: =40
+            X: =591
+            Y: =15
+            ZIndex: =4
+
+        imgHome_1 As image:
+            Height: =40
+            Image: =homeIcon
+            OnSelect: =Navigate(HomeScreen, Transition.None)
+            Width: =40
+            X: =533
+            Y: =15
+            ZIndex: =5
+
+        btnUser_1 As button:
+            DisabledBorderColor: =RGBA(166, 166, 166, 0)
+            DisabledFill: =RGBA(244, 244, 244, 0)
+            DisplayMode: =If(!IsBlank(varProfile),DisplayMode.Edit, DisplayMode.Disabled)
+            Fill: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            OnSelect: =Select(imgUser_1)
+            Size: =24
+            Text: =""
+            Width: =40
+            X: =591
+            Y: =17
+            ZIndex: =6
+
+        btnHome_1 As button:
+            DisabledBorderColor: =RGBA(166, 166, 166, 0)
+            DisabledFill: =RGBA(244, 244, 244, 0)
+            DisplayMode: =If(!IsBlank(varProfile),DisplayMode.Edit, DisplayMode.Disabled)
+            Fill: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            OnSelect: =Select(imgHome_1)
+            Size: =24
+            Text: =""
+            Width: =40
+            X: =533
+            Y: =17
+            ZIndex: =7
+
+    Group2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =7
+
+        lblPersonalInfoTitle_1 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =50
+            Size: =16
+            Text: ="YOU SAVED"
+            Width: =160
+            X: =50
+            Y: =88
+            ZIndex: =3
+
+        Container1 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Semibold
+            Height: =100
+            Width: =160
+            X: =50
+            Y: =138
+            ZIndex: =4
+
+        Rectangle1_3 As rectangle:
+            Fill: |-
+                =ColorValue("#ECF5F6")
+            Width: =160
+            X: =50
+            Y: =138
+            ZIndex: =5
+
+        Label1 As label:
+            Align: =Align.Center
+            Color: |-
+                =ColorValue("#205688")
+            Fill: |-
+                =ColorValue("#ECF5F6")
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =80
+            Size: =18
+            Text: |-
+                ="15KG 
+                CO2e"
+            Width: =160
+            X: =50
+            Y: =148
+            ZIndex: =6
+
+    Group2_1 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =11
+
+        lblPersonalInfoTitle_2 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =50
+            Size: =18
+            Text: ="YOU MET"
+            Width: =160
+            X: =240
+            Y: =88
+            ZIndex: =7
+
+        Container1_1 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Semibold
+            Height: =100
+            Width: =160
+            X: =240
+            Y: =138
+            ZIndex: =8
+
+        Rectangle1_4 As rectangle:
+            Fill: |-
+                =ColorValue("#ECF5F6")
+            Width: =160
+            X: =240
+            Y: =138
+            ZIndex: =9
+
+        Label1_1 As label:
+            Align: =Align.Center
+            Color: |-
+                =ColorValue("#205688")
+            Fill: |-
+                =ColorValue("#ECF5F6")
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =80
+            Size: =18
+            Text: |-
+                ="27
+                COLLEAGUES
+                "
+            Width: =160
+            X: =240
+            Y: =148
+            ZIndex: =10
+
+    lblPersonalInfoTitle_4 As label:
+        Align: =Align.Center
+        Color: |-
+            =ColorValue("#2B6ED3")
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =50
+        Size: =24
+        Text: ="Profile"
+        Width: =160
+        X: =50
+        Y: =265
+        ZIndex: =15
+
+    Group2_2 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =15
+
+        lblPersonalInfoTitle_3 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =50
+            Size: =18
+            Text: ="YOU SCORED"
+            Width: =160
+            X: =430
+            Y: =88
+            ZIndex: =11
+
+        Container1_2 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Semibold
+            Height: =100
+            Width: =160
+            X: =430
+            Y: =138
+            ZIndex: =12
+
+        Rectangle1_5 As rectangle:
+            Fill: |-
+                =ColorValue("#ECF5F6")
+            Width: =160
+            X: =430
+            Y: =138
+            ZIndex: =13
+
+        Label1_2 As label:
+            Align: =Align.Center
+            Color: |-
+                =ColorValue("#205688")
+            Fill: |-
+                =ColorValue("#ECF5F6")
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =80
+            Size: =18
+            Text: |-
+                ="18
+                POINTS"
+            Width: =160
+            X: =430
+            Y: =148
+            ZIndex: =14
+
+    lblPersonalInfoTitle_5 As label:
+        Align: =Align.Center
+        Color: |-
+            =ColorValue("#2B6ED3")
+        Font: =Font.'Segoe UI'
+        Height: =50
+        Size: =24
+        Text: ="Badges"
+        Width: =160
+        X: =240
+        Y: =265
+        ZIndex: =16
+
+    lblPersonalInfoTitle_6 As label:
+        Align: =Align.Center
+        Color: |-
+            =ColorValue("#2B6ED3")
+        Font: =Font.'Segoe UI'
+        Height: =50
+        Size: =24
+        Text: ="Gifts"
+        Width: =160
+        X: =430
+        Y: =265
+        ZIndex: =17
+
+    Rectangle2 As rectangle:
+        Height: =2
+        Width: =540
+        X: =50
+        Y: =325
+        ZIndex: =18
+
+    Rectangle2_1 As rectangle:
+        Height: =6
+        Width: =160
+        X: =50
+        Y: =323
+        ZIndex: =19
+
+    btnTabs As button:
+        Fill: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Size: =24
+        Text: =""
+        X: =50
+        Y: =275
+        ZIndex: =20
+
+    btnTabs_1 As button:
+        Fill: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Size: =24
+        Text: =""
+        X: =240
+        Y: =275
+        ZIndex: =21
+
+    btnTabs_2 As button:
+        Fill: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Size: =24
+        Text: =""
+        X: =430
+        Y: =270
+        ZIndex: =22
+

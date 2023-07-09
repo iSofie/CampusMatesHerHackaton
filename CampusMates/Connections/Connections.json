@@ -1,0 +1,48 @@
+{
+  "78a2515b-2f19-4bf2-baa7-6d869d8609ef": {
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/shgogna/globalperconnector-train1/1.0.1639.3312/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://sofiedev.sharepoint.com/sites/FreudenbergChallenge": {
+        "dataSources": {
+          "PlannedEvents": {
+            "tableName": "d71f054b-7f53-46a1-9f7f-cf6a5587672a"
+          },
+          "Profile": {
+            "tableName": "560f7c33-e33a-4b6b-b93f-afd43cfd1866"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Profile",
+      "PlannedEvents"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "78a2515b-2f19-4bf2-baa7-6d869d8609ef"
+  },
+  "a2813041-1a12-4382-9de5-fa534045e5ee": {
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/partial-builds/390724148/1.0.1641.3327/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "a2813041-1a12-4382-9de5-fa534045e5ee"
+  }
+}

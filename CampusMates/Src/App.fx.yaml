@@ -1,0 +1,36 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |+
+        =//Initialize theme
+        Set(Theme,
+            {
+                PrimaryColor: ColorValue("#205688"),
+                SecondaryColor:ColorValue("#F4F4F4"),
+                TertiaryColor:Color.White,
+                QuaternaryColor: RGBA(0,60,113,1),
+                BorderColor:RGBA(0,60,113,1),
+                PopUpFill: Color.White,
+                MenuFill: RGBA(153,153,153, 1),
+                BackGroundFill: RGBA(51, 51, 51, .1),
+                FontSizeHeader:18,
+                FontSize:18,
+                BorderThickness:1,
+                HintText: "Search on behalf of...",
+                IconHeight: 50,
+                IconHeightSmall: 35,
+                RadioHeight: 40,
+                ScreenMargin:40
+            }
+        );
+        Set(varO365Profile, Office365Users.MyProfileV2());
+        Set(varProfile, LookUp(Profile, Title = User().Email));
+        
+    StartScreen: =HomeScreen
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+
